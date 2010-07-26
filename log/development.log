@@ -1,0 +1,75 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (5.7ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLeagues (20100726012723)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (8.1ms)[0m   [0mCREATE TABLE "leagues" ("id" serial primary key, "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100726012723')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-25 18:44:59) [GET]
+
+ActionController::RoutingError (No route matches "/league" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-07-25 18:45:03) [GET]
+  [4;36;1mLeague Load (1.6ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 56ms (View: 48, DB: 2) | 200 OK [http://localhost/leagues]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing LeaguesController#new (for 127.0.0.1 at 2010-07-25 18:45:10) [GET]
+Rendering template within layouts/leagues
+Rendering leagues/new
+Completed in 123ms (View: 114, DB: 0) | 200 OK [http://localhost/leagues/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing LeaguesController#create (for 127.0.0.1 at 2010-07-25 18:50:50) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"bhrDBYVAXUvIx7kQjJyXrMVQWlw9H1MDGZWgcSFXmqE=", "league"=>{"name"=>"Ben's League"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "leagues" ("name", "created_at", "updated_at") VALUES('Ben''s League', '2010-07-26 01:50:50.276754', '2010-07-26 01:50:50.276754') RETURNING "id"[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/leagues/1
+Completed in 26ms (DB: 2) | 302 Found [http://localhost/leagues]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-07-25 18:50:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mLeague Load (0.9ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 1) [0m
+Rendering template within layouts/leagues
+Rendering leagues/show
+Completed in 64ms (View: 52, DB: 1) | 200 OK [http://localhost/leagues/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-07-25 18:59:34) [GET]
+  [4;35;1mLeague Load (113.9ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 289ms (View: 169, DB: 114) | 200 OK [http://localhost/leagues]

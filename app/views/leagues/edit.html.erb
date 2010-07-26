@@ -1,0 +1,16 @@
+<h1>Editing league</h1>
+
+<% form_for(@league) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @league %> |
+<%= link_to 'Back', leagues_path %>
