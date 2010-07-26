@@ -25,4 +25,9 @@ config.action_mailer.delivery_method = :test
 # Use SQL instead of Active Record's schema dumper when creating the test database.
 # This is necessary if your schema can't be completely dumped by the schema dumper,
 # like if you have constraints or database-specific column types
-# config.active_record.schema_format = :sql
+# config.active_record.schema_format = :sq
+
+#these lines were added for rspec config as told to by this page,
+# http://wiki.github.com/dchelimsky/rspec/configgem-for-rails
+config.gem "rspec", :lib => false, :version => ">= 1.2.0"
+config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
