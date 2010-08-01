@@ -1,4 +1,3 @@
 # ignore the database.yml file
-database.yml
 config/database.yml
 *.swp
