@@ -39,7 +39,7 @@ test:
   encoding: unicode
   database: scorganizer_test
   pool: 5
-  username: scorganizer
+  username: postgres
   password:
 
 production:
