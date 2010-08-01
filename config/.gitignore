@@ -1,3 +1,4 @@
 # Ignore the database.yml for now because testing across OS X, Windows, and Linux are all completely different. FML
-
 config/database.yml
+database.*
+database.yml
