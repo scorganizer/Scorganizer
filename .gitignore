@@ -2,3 +2,7 @@
 database.yml
 config/database.yml
 *.swp
+
+#ignore the log directory
+log/*.log
+tmp/**/*
