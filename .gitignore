@@ -6,3 +6,4 @@ config/database.yml
 #ignore the log directory
 log/*.log
 tmp/**/*
+logfile
