@@ -2,16 +2,16 @@
 
 one:
   name: "Fixture Team 1"
-  league: one:
+  league: one
 
 two:
   name: "Fixture Team 2"
-  league: one:
+  league: one
 
 three:
   name: "Fixture Team 3"
-  league: two:
+  league: two
 
 four:
   name: "Fixture Team 4"
-  league: two:
+  league: two
