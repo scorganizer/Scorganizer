@@ -3,7 +3,7 @@ class TeamsController < ApplicationController
   # GET /teams.xml
   def index
     @league = League.find(params[:league_id])
-    @teams = Team.find_by_league_id(@league)
+    @teams = @league.teams 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +25,8 @@ class TeamsController < ApplicationController
   # GET /teams/new
   # GET /teams/new.xml
   def new
-    @team = Team.new
+    league = League.find(params[:league_id])
+    @team = Team.new(:league_id => league.id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,11 +42,12 @@ class TeamsController < ApplicationController
   # POST /teams
   # POST /teams.xml
   def create
+    league = League.find(params[:league_id])
     @team = Team.new(params[:team])
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to(@team, :notice => 'Team was successfully created.') }
+        format.html { redirect_to(league_teams_path(league), :notice => 'Team was successfully created.') }
         format.xml  { render :xml => @team, :status => :created, :location => @team }
       else
         format.html { render :action => "new" }

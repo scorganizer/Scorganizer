@@ -11,9 +11,9 @@
     <tr>
       <td><%=h team.name %></td>
       <td><%=h team.league_id %></td>
-      <td><%= link_to 'Show', league_team_path %></td>
-      <td><%= link_to 'Edit', edit_league_team_path(team) %></td>
-      <td><%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Show', league_team_path(:league_id, team.id) %></td>
+      <td><%= link_to 'Edit', edit_league_team_path(:league_id, team.id) %></td>
+      <td><%= link_to 'Destroy', league_team_path(:league_id, team.id), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 <% end %>
