@@ -6,17 +6,19 @@
     <th>League</th>
   </tr>
 
-<% @teams.each do |team| %>
-  <tr>
-    <td><%=h team.name %></td>
-    <td><%=h team.league_id %></td>
-    <td><%= link_to 'Show', team %></td>
-    <td><%= link_to 'Edit', edit_team_path(team) %></td>
-    <td><%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% if !@teams.nil? %>
+  <% @teams.each do |team| %>
+    <tr>
+      <td><%=h team.name %></td>
+      <td><%=h team.league_id %></td>
+      <td><%= link_to 'Show', league_team_path %></td>
+      <td><%= link_to 'Edit', edit_league_team_path(team) %></td>
+      <td><%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New team', new_team_path %>
+<%= link_to 'New team', new_league_team_path %>

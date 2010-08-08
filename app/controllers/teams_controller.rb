@@ -2,7 +2,8 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.xml
   def index
-    @teams = Team.all
+    @league = League.find(params[:league_id])
+    @teams = Team.find_by_league_id(@league)
 
     respond_to do |format|
       format.html # index.html.erb

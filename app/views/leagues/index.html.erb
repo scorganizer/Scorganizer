@@ -9,6 +9,7 @@
   <tr>
     <td><%=h league.name %></td>
     <td><%= link_to 'Show', league %></td>
+    <td><%= link_to 'Teams', league_teams_url(league) %></td>
     <td><%= link_to 'Edit', edit_league_path(league) %></td>
     <td><%= link_to 'Destroy', league, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
