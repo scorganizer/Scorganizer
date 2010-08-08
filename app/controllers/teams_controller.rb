@@ -63,7 +63,7 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.update_attributes(params[:team])
-        format.html { redirect_to(@team, :notice => 'Team was successfully updated.') }
+        format.html { redirect_to(league_teams_path(@team.league_id), :notice => 'Team was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,10 +76,11 @@ class TeamsController < ApplicationController
   # DELETE /teams/1.xml
   def destroy
     @team = Team.find(params[:id])
+    league_id = @team.league_id
     @team.destroy
 
     respond_to do |format|
-      format.html { redirect_to(teams_url) }
+      format.html { redirect_to(league_teams_path(league_id)) }
       format.xml  { head :ok }
     end
   end

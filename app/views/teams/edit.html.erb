@@ -1,6 +1,6 @@
 <h1>Editing team</h1>
 
-<% form_for(@team) do |f| %>
+<% form_for :team, :url => { :action => :update, :id => @team}, :html => { :method => :put } do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -16,5 +16,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @team %> |
-<%= link_to 'Back', teams_path %>
+<%= link_to 'Show', league_team_path(@team.league_id, @team.id) %> |
+<%= link_to 'Back', :back %>
