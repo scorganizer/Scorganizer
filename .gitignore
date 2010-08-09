@@ -7,3 +7,6 @@ config/database.yml
 log/*.log
 tmp/**/*
 logfile
+
+#ignore the .bundle directory
+.bundle/*
