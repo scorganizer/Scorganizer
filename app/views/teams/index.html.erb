@@ -1,4 +1,4 @@
-<h1>Listing teams</h1>
+<h1><%= h @league.name %> Teams</h1>
 
 <table>
   <tr>
@@ -10,7 +10,7 @@
   <% @teams.each do |team| %>
     <tr>
       <td><%=h team.name %></td>
-      <td><%=h team.league_id %></td>
+      <td><%=h team.league.name %></td>
       <td><%= link_to 'Show', league_team_path(team.league_id, team.id) %></td>
       <td><%= link_to 'Edit', edit_league_team_path(team.league_id, team.id) %></td>
       <td><%= link_to 'Destroy', league_team_path(team.league_id, team.id), :confirm => 'Are you sure?', :method => :delete %></td>
